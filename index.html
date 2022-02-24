@@ -10,35 +10,43 @@
 </head>
 <body>
     
-    <div id="game-container">
+    <header>
+        
         <nav id="navigation">
-            <ul>
-                <li class = 'home-list'><h2>Spiderman Trivia Game</h2></li>
-                <li class = 'home-list'>
+            <span class = 'nav-list'><h2>Spiderman Trivia Game</h2></span>
+                <span class = 'nav-list'>
                     Spiderman 1
-                </li>
-                <li class = 'home-list'>
+                </span>
+                <span class = 'nav-list'>
                     Spiderman 2
-                </li>
-                <li class = 'home-list'>
+                </span>
+                <span class = 'nav-list'>
                     Spiderman 3
-                </li>
-                <li class = 'home-list'>
+                </span>
+                <span class = 'nav-list'>
                     Spiderman: No Way Home
-                </li>
-            </ul>
+                </span>
         </nav>
-        <div id = "grid-container">
-            <div>1/10</div>
+    </header>
+    <main>
+        <div id = "flex-container">
+            <aside>
+                <p>SKIP</p>
+            </aside>
             <div id = 'question-card'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio, quibusdam.</div>
-            <div id = 'score'>0 points</div>
-            <div class="answer-choices">lorem</div>
-            <div class="answer-choices">lorem</div>
-            <div class="answer-choices">lorem</div>
-            <div class="answer-choices">lorem</div>
+            <aside>
+                <p id = 'score'>Score: 0</p> 
+            </aside>
         </div>
+        <div id="flex-answers">
+            <button class="answer-choices">lorem</button>
+            <button class="answer-choices">lorem</button>
+            <button class="answer-choices">lorem</button>
+            <button class="answer-choices">lorem</button>
+        </div>
+        
+    </main>
 
-    </div>
     <script src = 'main.js'></script>
 </body>
 </html>
