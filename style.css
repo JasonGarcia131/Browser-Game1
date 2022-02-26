@@ -1,11 +1,8 @@
 body{
 
     width: 100%;
-    height: 100vh;
     box-sizing: border-box;
-    background: linear-gradient(#e66465, #9198e5);
-   
-
+    overflow: hidden;
 }
 
 
@@ -14,23 +11,127 @@ body{
 #home-navigation{
 
     text-align: center;
-   
-    
+    height: 100vh;
+    background-image: url('./img/homepage.jpg');
+    padding: 0;
+    margin: 0;
 
 
 }
 
-li{
+ul{
 
     list-style: none;
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 0;
     font-weight: 600;
     
 
 }
 
+#gameBackground{
+
+    background-image: url('./img/gamepage.jpg');
+    height: 100vh;
+    width: 100%;
+
+}
+
+#gameBackground > h2{
+
+    text-align: center;
+    color: white;
+    transform: translate(0, -50px)
+
+}
+
+#gameBackground > button{
+
+   
+    color: white;
+    transform: translate(200px,0)
+
+}
+.cards{
+
+width: 100px;
+height: 150px;
+border-radius: 5px;
+background: white;
+
+}
+
+#deck{
+
+    float: right;
+    background: red;
+    transform: translate(-60px, 0);
+
+}
+
+#dealersCard1{
+
+   margin: auto;
+   background: blue;
+   transform: rotate(-10deg);
+
+}
+#dealersCard2{
+
+    margin: auto;
+    background: lightblue;
+    transform: translate(-50px, -150px) rotate(10deg);
+
+ }
+
+#playersCard1{
+
+    margin: auto;
+    background: yellow;
+     transform: rotate(10deg);
+}
+
+#playersCard2{
+
+    margin: auto;
+    background: green;
+    transform: translate(-50px, -150px) rotate(-10deg);
+}
+
+.playOptions{
+
+color: white;
+font-weight: 500;
+display: inline-block;
+
+
+}
+
+.playerOptionButton{
+
+margin: 0 20px 0 20px;
+width: 70px;
+
+}
+
+nav > ul {
+
+    text-align: center;
+
+}
+
+nav{
+    transform: translate(-23px, -130px);
+}
+
+
+
+
 /*This is styling index.html*/
 
-header{
+/* header{
 
     width: 98%;
     border: 1px solid black;
@@ -116,4 +217,4 @@ main{
     grid-template-rows: 1fr,1fr,1fr;
     border: 1px solid black;
 
-}
+} */
