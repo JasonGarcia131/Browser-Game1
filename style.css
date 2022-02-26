@@ -88,6 +88,7 @@ background: white;
 
 #playersCard1{
 
+    animation: move 1s;
     margin: auto;
     background: yellow;
      transform: rotate(10deg);
@@ -95,6 +96,7 @@ background: white;
 
 #playersCard2{
 
+    animation: move 1s;
     margin: auto;
     background: green;
     transform: translate(-50px, -150px) rotate(-10deg);
@@ -126,6 +128,25 @@ nav{
     transform: translate(-23px, -130px);
 }
 
+#animatedCard{
+
+animation: flip 2s;
+
+}
+
+@keyframes flip{
+    from{
+        transform: translate(-60px,0);
+    }
+
+    100%{
+
+        transform: translate(-480px, 390px)
+        rotateX(180deg)
+        rotate(-15deg)
+    }
+
+}
 
 
 

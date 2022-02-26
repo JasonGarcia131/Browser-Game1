@@ -13,11 +13,13 @@
 
     <div id="gameBackground">
 
-        <div class='cards' id = 'deck'></div>
+        <div class='cards' id = 'deck'>
+            <div class="cards" id = 'animatedCard'></div>
+        </div>
         <div class='cards' id = 'dealersCard1'></div>
         <div class='cards' id = 'dealersCard2'></div>
-        <h2>Bet Amount: 0</h2>
-        <button>BET Button</button>
+        <h2 id = 'betAmount'>Bet Amount: 0</h2>
+        <button id = 'bet'>BET Button</button>
         <div class = 'cards' id= 'playersCard1'></div>
         <div class = 'cards' id= 'playersCard2'></div>
         <nav>
@@ -32,7 +34,6 @@
         </nav>
 
     </div>
-
 
     <!-- <header> -->
         
@@ -71,6 +72,6 @@
         
     </main>
 
-    <script src = 'main.js'></script>
+    <script src = 'main.js' defer></script>
 </body>
 </html>
