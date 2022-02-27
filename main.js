@@ -1,7 +1,7 @@
 // let body = document.getElementsByTagName('body')
 // let deckButton = document.getElementById('deckButton');
 // let betButton = document.getElementById('betButton')
-let hitButton = document.getElementById('hitButton')
+let hitButton = document.querySelector('#hitButton')
 // let stayButton = document.getElementById('stayButton')
 // let score = document.getElementById('betAmount')
 // let playerCard1 = document.getElementById('playersCard1')
@@ -11,28 +11,21 @@ let hitButton = document.getElementById('hitButton')
 // let dealtCard = 0;
 // let cash = 1000;
 
-
 function dealCards(){
-
-let dealtCard = deckArray[Math.floor(Math.random()*deckArray.length)]
-return dealtCard
-
+    let dealtCard = deckArray[Math.floor(Math.random()*deckArray.length)]
+    return dealtCard
 }
 
 function sumCards(card1, card2){
-
-let playerHandSum = card1 + card2
-console.log('card1: ' + card1)// im consolelogging too many times 
-console.log('card2: ' + card2)
-console.log('sum: ' + playerHandSum)
-return playerHandSum
-
+    let playerHandSum = card1 + card2
+    console.log('card1: ' + card1)// im consolelogging too many times 
+    console.log('card2: ' + card2)
+    console.log('sum: ' + playerHandSum)
+    return playerHandSum
 }
 
 
-
-let hit = hitButton.addEventListener('click',function hit(currentHand){
-
+function hit(currentHand){
     let newCard = dealCards()
     console.log('------------------')
     console.log('newCard: ' + newCard)
@@ -40,10 +33,8 @@ let hit = hitButton.addEventListener('click',function hit(currentHand){
     let newHand = sumCards(newCard, currentHand)
     console.log('new hand: ' + newHand)
     return newHand
-},
-true
-)
-console.log(typeof hit)
+}
+
 
 
 
@@ -77,40 +68,78 @@ if (playerInitialHand == 21){
    console.log('You got 21, you win!')
 }
 else if(playerInitialHand < 21){
-
-    let round1 = hit(playerInitialHand);
-    if(round1 == 21){
-        console.log('you win')
-    }
-    else if (round1 < 21){
-        let round2 = hit(round1)
-        console.log(round2)
-        if(round2 == 21){
-            console.log('you win')
-        }
-        else if(round2 < 21){
-            let round3 = hit(round2)
-            console.log(round3)
-            if (round3 <= 21){
-                console.log('you win!')
-            }
-            else{
-                console.log('busted')
-            }
+    console.log('stay or hit')
+     hitButton.addEventListener('click',async()=>{
+        let round1 = hit(playerInitialHand)
+        console.log('thid is rnning')
+        if(round1 < 21){
+            console.log('hit or stay?')
+            hitButton.addEventListener('click',async ()=>{
+                let round2 = hit(round1)
+                if(round2 < 21){
+                    console.log('hit or stay?')
+                    hitButton.addEventListener('click',async ()=>{
+                        let round3 = hit(round2)
+                        if(round3 <= 21){
+                            console.log('Ypu win')
+                        }
+                        else{
+                            console.log('busted')
+                        }
+                    })
+                }
+                else{
+                    console.log('busted')
+                }
+            })
         }
         else{
             console.log('busted')
-        }
-    }
-    else{
-        console.log('busted')
-    }
+       }
+})
+hitButton.addEventListener('click', ()=>{
+    hitButton.removeEventListener('click',()=>{})
+})
 }
-else{
-    console.log('busted')
+
 }
-}
+    //if(round1 == 21){
+//             console.log('you win')
+//         }
+//         else if (round1 < 21){
+//             async function phase2(){
+//                 let round2 = await hit(round1)
+//                 console.log(round2)
+//                 if(round2 == 21){
+//                     console.log('you win')
+//                 }
+//                 else if(round2 < 21){
+//                     async function phase3(){
+//                         let round3 = hit(round2)
+//                         console.log(round3)
+//                         if (round3 <= 21){
+//                             console.log('you win!')
+//                         }
+//                         else{
+//                             console.log('busted')
+//                         }
+//                     }
+//                 }
+//                 else{
+//                     console.log('busted')
+//                 }
+//             }
+//         }
+//         else{
+//             console.log('busted')
+//         }
+//     }
+// else{
+//     console.log('busted')
+// }
+
 gameplay()
+
     //if(){//add function for hit onclick
         // let newCard3 = dealCards()// player has 3 cards 
         // console.log('newCard3: ' + newCard3)
