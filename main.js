@@ -1,24 +1,183 @@
-// let body = document.getElementsByTagName('body')
-// let deckButton = document.getElementById('deckButton');
-// let betButton = document.getElementById('betButton')
-let hitButton = document.querySelector('#hitButton')
-// let stayButton = document.getElementById('stayButton')
-// let score = document.getElementById('betAmount')
-// let playerCard1 = document.getElementById('playersCard1')
-// let playerCard2 = document.getElementById('playersCard2')
-// let dealerCard1 = document.getElementById('dealersCard1')
-// let dealerCard1 = document.getElementById('dealersCard2')
-// let dealtCard = 0;
+let deckObject = [
+    {
+        img: './img/ace1.jpeg',
+        value: 1
+    },
+    {
+        img: '',
+        value: 1
+    },
+    {
+        img: '',
+        value: 1
+    },
+    {
+        img: '',
+        value: 1
+    },
+    {
+        img: '',
+        value: 2
+    },
+    {
+        img: '',
+        value: 2
+    },
+    {
+        img: '',
+        value: 2
+    },
+    {
+        img: '',
+        value: 2
+    },
+    {
+        img: '',
+        value: 3
+    },
+    {
+        img: '',
+        value: 3
+    },
+    {
+        img: '',
+        value: 3
+    },
+    {
+        img: '',
+        value: 3
+    },
+    {
+        img: '',
+        value: 4
+    },
+    {
+        img: '',
+        value: 4
+    },
+    {
+        img: '',
+        value: 4
+    },
+    {
+        img: '',
+        value: 4
+    },
+    {
+        img: '',
+        value: 5
+    },
+    {
+        img: '',
+        value: 5
+    },
+    {
+        img: '',
+        value: 5
+    },
+    {
+        img: '',
+        value: 5
+    },
+    {
+        img: '',
+        value: 6
+    },
+    {
+        img: '',
+        value: 6
+    },
+    {
+        img: '',
+        value: 6
+    },
+    {
+        img: '',
+        value: 6
+    },
+    {
+        img: '',
+        value: 7
+    },
+    {
+        img: '',
+        value: 7
+    },
+    {
+        img: '',
+        value: 7
+    },
+    {
+        img: '',
+        value: 7
+    },
+    {
+        img: '',
+        value: 8
+    },
+    {
+        img: '',
+        value: 8
+    },
+    {
+        img: '',
+        value: 8
+    },
+    {
+        img: '',
+        value: 8
+    },
+    {
+        img: '',
+        value: 9
+    },
+    {
+        img: '',
+        value: 9
+    },
+    {
+        img: '',
+        value: 9
+    },
+    {
+        img: '',
+        value: 9
+    },
+    {
+        img: '',
+        value: 10
+    },
+    {
+        img: '',
+        value: 10
+    },
+    {
+        img: '',
+        value: 10
+    },
+    {
+        img: '',
+        value: 10
+    }
+]
+let playerCardContainer = document.querySelector('#playerCardContainer');
+let playerCard1 = document.querySelector('#playersCard1');
+let hitButton = document.querySelector('#hitButton');
+
 // let cash = 1000;
 
 function dealCards(){
-    let dealtCard = deckArray[Math.floor(Math.random()*deckArray.length)]
+    // let dealtCard = deckObject[0] //Math.floor(Math.random()*deckObject.length)
+    // playerCard1.style.backgroundImage = `url('${dealtCard.img}')`;
+    // playerCardContainer.appendChild(playerCard1)      
+    let dealtCard = deckArray[Math.floor(Math.random()*deckArray.length)]  
     return dealtCard
 }
 
+
 function sumCards(card1, card2){
     let playerHandSum = card1 + card2
-    console.log('card1: ' + card1)// im consolelogging too many times 
+    console.log('card1: ' + card1)
     console.log('card2: ' + card2)
     console.log('sum: ' + playerHandSum)
     return playerHandSum
@@ -96,9 +255,6 @@ else if(playerInitialHand < 21){
         else{
             console.log('busted')
        }
-})
-hitButton.addEventListener('click', ()=>{
-    hitButton.removeEventListener('click',()=>{})
 })
 }
 

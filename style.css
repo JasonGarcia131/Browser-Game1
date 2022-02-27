@@ -1,8 +1,10 @@
 body{
 
     width: 100%;
+    margin: 0;
     box-sizing: border-box;
     overflow: hidden;
+  
 }
 
 
@@ -33,73 +35,62 @@ ul{
 
 #gameBackground{
 
-    background-image: url('./img/gamepage.jpg');
+    background-image: url('./img/gamepagefinal.png');
     height: 100vh;
     width: 100%;
 
 }
 
-#gameBackground > h2{
 
-    text-align: center;
-    color: white;
-    transform: translate(0, -50px)
-
-}
-
-#gameBackground > button{
-
-   
-    color: white;
-    transform: translate(200px,0)
-
-}
 .cards{
 
-width: 100px;
-height: 150px;
+width: 147px;
+height: 232px;
 border-radius: 5px;
 background: white;
 
 }
 
-#deck{
 
-    float: right;
-    background: red;
-    transform: translate(-60px, 0);
+
+.dealerCardContainer{
+
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    margin: auto;
+    justify-content: space-between;
 
 }
 
-#dealersCard1{
+.playerCardContainer{
 
-   margin: auto;
-   background: blue;
-   transform: rotate(-10deg);
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    margin: auto;
+    justify-content: space-between;
 
 }
-#dealersCard2{
 
-    margin: auto;
-    background: lightblue;
-    transform: translate(-50px, -150px) rotate(10deg);
-
- }
-
-#playersCard1{
-
-    animation: move 1s;
-    margin: auto;
-    background: yellow;
-     transform: rotate(10deg);
+#yourWallet{
+    background: orange;
+    color: white;
+    font-size: large;
+    display: inline-block;
+    font-size: large;
 }
 
-#playersCard2{
+#dealerWallet{
+    background: orange;
+    color: white;
+    font-size: large;
+}
 
-    animation: move 1s;
-    margin: auto;
-    background: green;
-    transform: translate(-50px, -150px) rotate(-10deg);
+#betAmount{
+    background: orange;
+    color: white;
+    font-size: large;
 }
 
 .playOptions{
@@ -118,124 +109,12 @@ width: 70px;
 
 }
 
-nav > ul {
-
-    text-align: center;
-
-}
-
 nav{
-    transform: translate(-23px, -130px);
-}
 
-#animatedCard{
-
-animation: flip 2s;
-
-}
-
-@keyframes flip{
-    from{
-        transform: translate(-60px,0);
-    }
-
-    100%{
-
-        transform: translate(-480px, 390px)
-        rotateX(180deg)
-        rotate(-15deg)
-    }
-
-}
-
-
-
-/*This is styling index.html*/
-
-/* header{
-
-    width: 98%;
-    border: 1px solid black;
-
-}
-
-#navigation{
-
-    text-align: center;
-
-}
-#flex-container{
-
-    width: 98%;
-    height: 250px;
-    border: 1px solid black;
     display: flex;
     flex-direction: row;
-    justify-content: center;
-}
-
-#flex-container > aside{
-
-    width: 25%;
-    border: 1px solid black;
-    background: lightcoral;
-    text-align: right;
-    font-size: 2rem;
-
-}
-
-#question-card{
-
+    margin: auto;
     width: 50%;
-    background: lightgreen;
-
-} 
-
-#score{
-
-    text-align: left;
+    justify-content: center;
 
 }
-
-main{
-
-    margin-top: 100px;
-
-}
-#flex-answers{
-
-    width: 100%;
-    border: 1px solid black;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    height: 120px;
-    margin-top: 39px;
-    justify-content: space-around;
-
-}
-
-.answer-choices{
-
-
-    width: 45%;
-    height: 30%;
-    text-align: center;
-    border: 1px solid black;
-    background: lightskyblue;
-
-}
-.nav-list{
-
-    display: inline-block;
-   
-}
-
-#grid-container{
-
-    display: grid;
-    grid-template-columns: 1fr, 1fr, 1fr;
-    grid-template-rows: 1fr,1fr,1fr;
-    border: 1px solid black;
-
-} */
