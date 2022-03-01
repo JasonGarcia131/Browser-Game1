@@ -9,30 +9,41 @@
     </style>
 </head>
 <body>
+    <nav id="home-navigation">
+        <ul>
+            <li><h2>BLACK JACK-O-LANTER:</h2></li>
+            <li>
+               <img src="./img/START.png" id = 'startButton' onclick = 'hideHomepage()'/>
+            </li>
+            </li>
+        </ul>
+    </nav>
     <div id="gameBackground">
-        <span id = 'dealerWallet'>Dealer Wallet: 1000 </span>
-        <div class="dealerCardContainer">
-            <div class='cards' id = 'dealersCard1'></div>
-            <div class='cards' id = 'dealersCard2'></div>
-            <div class='cards' id = 'dealersCard3'></div>
-            <div class='cards' id = 'dealersCard4'></div>
-            <div class='cards' id = 'dealersCard5'></div>
+        <div class="startScreen">
+            <span id = 'dealerWallet'>Dealer Wallet: 1000 </span>
+            <div class="dealerCardContainer">
+                <div class='cards' id = 'dealersCard1'></div>
+                <div class='cards' id = 'dealersCard2'></div>
+                <div class='cards' id = 'dealersCard3'></div>
+                <div class='cards' id = 'dealersCard4'></div>
+                <div class='cards' id = 'dealersCard5'></div>
+            </div>
+            <span id = 'betAmount'>Bet Amount: 0 </span>
+            <div class="playerCardContainer">
+                <div class = 'cards' id= 'playersCard1'></div>
+                <div class = 'cards' id= 'playersCard2'></div>
+                <div class = 'cards' id= 'playersCard3'></div>
+                <div class = 'cards' id= 'playersCard4'></div>
+                <div class = 'cards' id= 'playersCards5'></div>
+            </div>
+            <span id = 'yourWallet'>Your Wallet: 1000 </span>
+        
+            <nav>
+                <button id = 'hitButton' class = 'playerOptionButton' onclick = 'hit()'>HIT</button>
+                <button id = 'stayButton' class = 'playerOptionButton'>STAY</button>
+                <button id = 'bet' class = 'playerOptionButton'>BET</button>
+            </nav>
         </div>
-        <span id = 'betAmount'>Bet Amount: 0 </span>
-        <div class="playerCardContainer">
-            <div class = 'cards' id= 'playersCard1'></div>
-            <div class = 'cards' id= 'playersCard2'></div>
-            <div class = 'cards' id = 'playersCard3'></div>
-            <div class = 'cards' id = 'playersCard4'></div>
-            <div class = 'cards' id = 'playersCards5'></div>
-        </div>
-        <span id = 'yourWallet'>Your Wallet: 1000 </span>
-     
-        <nav>
-            <button id = 'hitButton' class = 'playerOptionButton'>HIT</button>
-            <button id = 'stayButton' class = 'playerOptionButton'>STAY</button>
-            <button id = 'bet' class = 'playerOptionButton'>BET</button>
-        </nav>
 
     </div>
 
