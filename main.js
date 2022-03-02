@@ -18,35 +18,35 @@ let deckObject = [
     ,
     {
         img: './img/2hearts.png',
-        value: 14
+        value: 2
     },
     {
         img: './img/2diamond.jpg',
-        value: 14
+        value: 2
     },
     {
         img: './img/2clubs.jpg',
-        value: 14
+        value: 2
     },
     {
         img: './img/2spades.png',
-        value: 14
+        value: 2
     },
     {
         img: './img/3spades.png',
-        value: 14
+        value: 3
     },
     {
         img: './img/3hearts.jpg',
-        value: 14
+        value: 3
     },
     {
         img: './img/3diamond.png',
-        value: 9
+        value: 3
     },
     {
         img: './img/3clubs.jpg',
-        value: 9
+        value: 3
     }/*,
     {
         img: '',
@@ -167,8 +167,13 @@ let playerCard2 = document.querySelector('#playersCard2');
 let playerCard3 = document.querySelector('#playersCard3');
 let playerCard4 = document.querySelector('#playersCard4');
 let playerCard5 = document.querySelector('#playersCard5');
+let dealerCard1 = document.querySelector('#dealersCard1');
+let dealerCard2 = document.querySelector('#dealersCard2');
+let dealerCard3 = document.querySelector('#dealersCard3');
+let dealerCard4 = document.querySelector('#dealersCard4');
+let dealerCard5 = document.querySelector('#dealersCard5');
 let playerWallet = document.querySelector('#yourWallet');
-let hitButton = document.querySelector('#hitButton');
+let hideButton = document.querySelectorAll('.playerOptionButton');
 let playerHandArray = [];
 let playerCash = 300;
 
@@ -194,10 +199,9 @@ function onStart(playerCash){ //3 this function runs third. Passes the latest va
 }
 
 function dealCards(){
-    let dealtCard = deckObject[Math.floor(Math.random()*deckObject.length)] 
-    console.log('dealt card: ' + dealtCard.value)   
-    // let dealtCard = deckArray[Math.floor(Math.random()*deckArray.length)]  
-    return dealtCard
+    let dealtCard = deckObject[Math.floor(Math.random()*deckObject.length)];
+    console.log('dealt card: ' + dealtCard.value);   
+    return dealtCard;
 }
 
 // function sumCards(card1, card2){  might need this for dealer
@@ -207,66 +211,63 @@ function dealCards(){
 //     // console.log('sum: ' + playerHandSum)
 //     return playerHandSum
 // }
-let turn = 0;
-
 async function hit(){
 
     let newHand = 0;
-    let newCard =  await dealCards()
-    console.log('new card: ' + newCard.value)
-    playerHandArray.push(newCard)
-    console.log(playerHandArray)
-       for(let i = 0 ; i < playerHandArray.length; i++){
-       newHand += playerHandArray[i].value
-     }
+    let newCard =  await dealCards();
+    console.log('new card: ' + newCard.value);
+    playerHandArray.push(newCard);
+    console.log(playerHandArray);
+    for(let i = 0 ; i < playerHandArray.length; i++){
+       newHand += playerHandArray[i].value;
+    }
     if(playerHandArray.length == 3){
-       playerCard3.style.backgroundImage = `url('${newCard.img}')`
-   }
+       playerCard3.style.backgroundImage = `url('${newCard.img}')`;
+    }
    else if(playerHandArray.length == 4){
-    playerCard4.style.backgroundImage = `url('${newCard.img}')`
-   }
+        playerCard4.style.backgroundImage = `url('${newCard.img}')`;
+    }
    else if(playerHandArray.length == 5){
-    playerCard5.style.backgroundImage = `url('${newCard.img}')`
-   }
-     console.log(newHand)
-     check(newHand,playerHandArray.length)
+        playerCard5.style.backgroundImage = `url('${newCard.img}')`;
+    }
+    console.log(newHand);
+    check(newHand,playerHandArray.length);
+   
 }
 
 function check(hand, numOfCards){
-if(hand == 21){
-   
-    playerCash = playerCash + 100
-    alert('You win! your cash: ' + playerCash)
-    resetGame(playerCash)
-}
-else if(hand < 21 && numOfCards == 5){
-    playerCash = playerCash + 100
-    alert('less than 21 5 cards you win!')
-    resetGame(playerCash)
-}
-else if (hand > 21){
-    
-    playerCash = playerCash - 100
-    alert('busted! your cash: ' + playerCash)
-    resetGame(playerCash)
-}
+    if(hand == 21){
+        playerCash = playerCash + 100;
+        alert('You win! your cash: ' + playerCash);
+        resetGame(playerCash);
+    }
+    else if(hand < 21 && numOfCards == 5){
+        playerCash = playerCash + 100;
+        alert('less than 21 5 cards you win!');
+        resetGame(playerCash);
+    }
+    else if (hand > 21){
+        
+        playerCash = playerCash - 100
+        alert('busted! your cash: ' + playerCash);
+        resetGame(playerCash);
+    }
 }
 
 
 function resetGame(cash){ 
 
-  playerCard3.style.backgroundImage =  `url('img/facedowncard.png')`
-  playerCard4.style.backgroundImage =  `url('img/facedowncard.png')`
-  playerCard5.style.backgroundImage =  `url('img/facedowncard.png')`
-    
-    playerHandArray = []
+    playerCard3.style.backgroundImage =  `url('img/facedowncard.png')`;
+    playerCard4.style.backgroundImage =  `url('img/facedowncard.png')`;
+    playerCard5.style.backgroundImage =  `url('img/facedowncard.png')`;
+    playerHandArray = [] // Resets playerHandArray to an empty array for the next round.
     if(cash >= 100){
-    onStart(cash)
+        onStart(cash);
     }
     else{
-        alert('Not enough money')
+        alert('Not enough money');
         playerWallet.innerHTML = `Your Wallet: ${cash}`;
-        returnHome()
+        returnHome();
 
     }
 }
@@ -277,12 +278,23 @@ function returnHome(){
 
 }
 
+function hide(){
+    hideButton.style.display = 'none';
+}
+function dealersTurn(){
 
+    let playerHand = 0;
+    for(let i = 0; i < playerHandArray.length; i++){
+        playerHand += playerHandArray[i].value
+    }
+    card1 = dealCards()
+    card2 = dealCards()
+    dealerCard1.style.backgroundImage = `url('${card1.img}')`
+    dealerCard2.style.backgroundImage = `url('${card2.img}')`
+  
 
+}
 
-
-
-// On the page load, cards should be dealt
 let deckArray = [1,1,1,1,2,2,2,2,3,3,3,3,4,4,4,4,5,5,5,5,6,6,6,6,7,7,7,7,8,8,8,8,9,9,9,9,10,10,10,10]
 //function dealersTurn(){
     //if(round1 == 21){
