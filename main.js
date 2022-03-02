@@ -18,35 +18,35 @@ let deckObject = [
     ,
     {
         img: './img/2hearts.png',
-        value: 2
+        value: 14
     },
     {
         img: './img/2diamond.jpg',
-        value: 2
+        value: 14
     },
     {
         img: './img/2clubs.jpg',
-        value: 2
+        value: 14
     },
     {
         img: './img/2spades.png',
-        value: 2
+        value: 14
     },
     {
         img: './img/3spades.png',
-        value: 3
+        value: 14
     },
     {
         img: './img/3hearts.jpg',
-        value: 3
+        value: 14
     },
     {
         img: './img/3diamond.png',
-        value: 3
+        value: 9
     },
     {
         img: './img/3clubs.jpg',
-        value: 3
+        value: 9
     }/*,
     {
         img: '',
@@ -164,17 +164,33 @@ let deckObject = [
 let playerCardContainer = document.querySelector('#playerCardContainer');
 let playerCard1 = document.querySelector('#playersCard1');
 let playerCard2 = document.querySelector('#playersCard2');
+let playerCard3 = document.querySelector('#playersCard3');
+let playerCard4 = document.querySelector('#playersCard4');
+let playerCard5 = document.querySelector('#playersCard5');
+let playerWallet = document.querySelector('#yourWallet');
 let hitButton = document.querySelector('#hitButton');
-let playerHandArray = []
+let playerHandArray = [];
+let playerCash = 300;
 
-// let cash = 1000;
 
-function hideHomepage(){//1 this runs on start button
-
-    let homepage = document.querySelector('#home-navigation')
+function hideHomepage(){    //1. This function runs when user clicks start on the homepage.
+    let homepage = document.querySelector('#home-navigation');
     homepage.style.display = 'none';
-    onStart()  // 2 this function gets invoked
+    onStart(playerCash);  // 2. This function gets invoked.
+}
 
+function onStart(playerCash){ //3 this function runs third. Passes the latest value for the variable.
+    playerWallet.innerHTML = `Your Wallet: ${playerCash}`;
+    let playerInitialCard1 = dealCards(); // 4 declares a random index of deckObject to this variable
+    playerCard1.style.backgroundImage = `url('${playerInitialCard1.img}')`; // line 185 and 187 loads the first two cards when game begins.
+    let playerInitialCard2 = dealCards(); // 
+    playerCard2.style.backgroundImage = `url('${playerInitialCard2.img}')`; 
+    playerCard3.style.backgroundImage = `url('img/facedowncard.png')`;
+    playerCard4.style.backgroundImage = `url('img/facedowncard.png')`;
+    playerCard5.style.backgroundImage = `url('img/facedowncard.png')`;
+    console.log('card1 value: ' + 'card2 Value: ' + playerInitialCard2.value);
+    playerHandArray.push(playerInitialCard1)
+    playerHandArray.push(playerInitialCard2)
 }
 
 function dealCards(){
@@ -191,6 +207,7 @@ function dealCards(){
 //     // console.log('sum: ' + playerHandSum)
 //     return playerHandSum
 // }
+let turn = 0;
 
 async function hit(){
 
@@ -202,40 +219,61 @@ async function hit(){
        for(let i = 0 ; i < playerHandArray.length; i++){
        newHand += playerHandArray[i].value
      }
-     if(newHand > 21){
-        console.log('busted')
+    if(playerHandArray.length == 3){
+       playerCard3.style.backgroundImage = `url('${newCard.img}')`
+   }
+   else if(playerHandArray.length == 4){
+    playerCard4.style.backgroundImage = `url('${newCard.img}')`
+   }
+   else if(playerHandArray.length == 5){
+    playerCard5.style.backgroundImage = `url('${newCard.img}')`
    }
      console.log(newHand)
+     check(newHand,playerHandArray.length)
 }
 
-// function stay(){
-
-//     dealersTurn()
-
-// 
-
-
-
-   function onStart(){ //3 this function runs third
-    let playerInitialCard1 = dealCards() // 4 invokes this function
-    playerCard1.style.backgroundImage =`url('${playerInitialCard1.img}')`;
-    let playerInitialCard2 = dealCards()// 5 invokes the same function
-    playerCard2.style.backgroundImage = `url('${playerInitialCard2.img}')`;
-    console.log('card1 value: ' +  + 'card2 Value: ' + playerInitialCard2.value)
-    playerHandArray.push(playerInitialCard1)
-    playerHandArray.push(playerInitialCard2)
-    initialSum = playerInitialCard1.value + playerInitialCard2.value
-    console.log(initialSum) 
-    // if(initialSum == 21){
-    //     endGame()
-    // }
-     // end of chain invokation 
+function check(hand, numOfCards){
+if(hand == 21){
+   
+    playerCash = playerCash + 100
+    alert('You win! your cash: ' + playerCash)
+    resetGame(playerCash)
+}
+else if(hand < 21 && numOfCards == 5){
+    playerCash = playerCash + 100
+    alert('less than 21 5 cards you win!')
+    resetGame(playerCash)
+}
+else if (hand > 21){
+    
+    playerCash = playerCash - 100
+    alert('busted! your cash: ' + playerCash)
+    resetGame(playerCash)
+}
 }
 
-function endGame(){ 
 
-    let playerHandArray = []
-    let
+function resetGame(cash){ 
+
+  playerCard3.style.backgroundImage =  `url('img/facedowncard.png')`
+  playerCard4.style.backgroundImage =  `url('img/facedowncard.png')`
+  playerCard5.style.backgroundImage =  `url('img/facedowncard.png')`
+    
+    playerHandArray = []
+    if(cash >= 100){
+    onStart(cash)
+    }
+    else{
+        alert('Not enough money')
+        playerWallet.innerHTML = `Your Wallet: ${cash}`;
+        returnHome()
+
+    }
+}
+
+function returnHome(){
+
+    window.location = 'index.html'
 
 }
 
@@ -283,3 +321,4 @@ let deckArray = [1,1,1,1,2,2,2,2,3,3,3,3,4,4,4,4,5,5,5,5,6,6,6,6,7,7,7,7,8,8,8,8
 // }
 
 //}
+// Need to test how to append divs for eavh random card
