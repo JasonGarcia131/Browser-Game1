@@ -47,10 +47,13 @@ ul{
 
 .cards{
 
-width: 147px;
+width: 158px;
 height: 232px;
 border-radius: 5px;
+border: 1px solid orange;
 background: white;
+background-image: url('./img/facedowncard.png');
+background-size: cover;
 
 }
 
@@ -60,7 +63,7 @@ background: white;
 
     display: flex;
     flex-direction: row;
-    width: 60%;
+    width: 70%;
     margin: auto;
     justify-content: space-between;
 
@@ -70,7 +73,7 @@ background: white;
 
     display: flex;
     flex-direction: row;
-    width: 60%;
+    width: 70%;
     margin: auto;
     justify-content: space-between;
 
@@ -90,10 +93,25 @@ background: white;
     font-size: large;
 }
 
-#betAmount{
+#messagePopUp{
     background: orange;
+    width: 50%;
+    height: 300px;
     color: white;
     font-size: large;
+   position: absolute;
+   transform: translate(300px, -100px);
+   display: none;
+   text-align: center;
+
+}
+.popUpButton{
+
+
+    width: 200px;
+    margin: 30px;
+    font-size: larger;
+
 }
 
 .playOptions{

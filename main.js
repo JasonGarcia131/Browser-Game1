@@ -1,165 +1,213 @@
 let deckObject = [
     {
-        img: './img/1club.png',
+        img: './img/aceHeart.png',
         value: 1
     },
     {
-        img: './img/1hearts.jpg',
+        img: './img/aceDiamonds.png',
         value: 1
     },
     {
-        img: './img/1spades.png',
+        img: './img/aceClubs.png',
         value: 1
     },
     {
-        img: './img/1diamond.png',
+        img: './img/aceSpades.png',
         value: 1
     }
     ,
     {
-        img: './img/2hearts.png',
+        img: './img/twoHearts.png',
         value: 2
     },
     {
-        img: './img/2diamond.jpg',
+        img: './img/twoDiamonds.png',
         value: 2
     },
     {
-        img: './img/2clubs.jpg',
+        img: './img/twoClubs.png',
         value: 2
     },
     {
-        img: './img/2spades.png',
+        img: './img/twoSpades.png',
         value: 2
     },
     {
-        img: './img/3spades.png',
+        img: './img/threeHearts.png', 
         value: 3
     },
     {
-        img: './img/3hearts.jpg',
+        img: './img/threeDiamonds.png',
         value: 3
     },
     {
-        img: './img/3diamond.png',
+        img: './img/threeClubs.png',
         value: 3
     },
     {
-        img: './img/3clubs.jpg',
+        img: './img/threeSpades.png',
         value: 3
-    }/*,
+    },
     {
-        img: '',
+        img: './img/fourHearts.png',
         value: 4
     },
     {
-        img: '',
+        img: './img/fourDiamonds.png',
         value: 4
     },
     {
-        img: '',
+        img: './img/fourClubs.png',
         value: 4
     },
     {
-        img: '',
+        img: './img/fourSpades.png',
         value: 4
     },
     {
-        img: '',
+        img: './img/fiveHearts.png',
         value: 5
     },
     {
-        img: '',
+        img: './img/fiveDiamonds.png',
         value: 5
     },
     {
-        img: '',
+        img: './img/fiveClubs.png',
         value: 5
     },
     {
-        img: '',
+        img: './img/fiveSpades.png',
         value: 5
     },
     {
-        img: '',
+        img: './img/sixHearts.png',
         value: 6
     },
     {
-        img: '',
+        img: './img/sixDiamond.png',
         value: 6
     },
     {
-        img: '',
+        img: './img/sixClubs.png',
         value: 6
     },
     {
-        img: '',
+        img: './img/sixSpades.png',
         value: 6
     },
     {
-        img: '',
+        img: './img/sevenHearts.png',
         value: 7
     },
     {
-        img: '',
+        img: './img/sevenDiamonds.png',
         value: 7
     },
     {
-        img: '',
+        img: './img/sevenClubs.png',
         value: 7
     },
     {
-        img: '',
+        img: './img/sevenSpades.png',
         value: 7
     },
     {
-        img: '',
+        img: './img/eightHearts.png',
         value: 8
     },
     {
-        img: '',
+        img: './img/eightDiamonds.png',
         value: 8
     },
     {
-        img: '',
+        img: './img/eightClubs.png',
         value: 8
     },
     {
-        img: '',
+        img: './img/eightSpades.png',
         value: 8
     },
     {
-        img: '',
+        img: './img/nineHearts.png',
         value: 9
     },
     {
-        img: '',
+        img: './img/nineDiamonds.png',
         value: 9
     },
     {
-        img: '',
+        img: './img/nineClubs.png',
         value: 9
     },
     {
-        img: '',
+        img: './img/nineSpades.png',
         value: 9
     },
     {
-        img: '',
+        img: './img/tenHearts.png',
         value: 10
     },
     {
-        img: '',
+        img: './img/tenDiamonds.png',
         value: 10
     },
     {
-        img: '',
+        img: './img/tenClubs.png',
         value: 10
     },
     {
-        img: '',
+        img: './img/tenSpades.png',
         value: 10
-    }*/
+    },
+    {
+        img: './img/jHearts.png',
+        value: 10
+    },
+    {
+        img: './img/jDiamonds.png',
+        value: 10
+    },
+    {
+        img: './img/jClubs.png',
+        value: 10
+    },
+    {
+        img: './img/jSpades.png',
+        value: 10
+    },
+    {
+        img: './img/qHearts.png',
+        value: 10
+    },
+    {
+        img: './img/qDiamonds.png',
+        value: 10
+    },
+    {
+        img: './img/qClubs.png',
+        value: 10
+    },
+    {
+        img: './img/qSpades.png',
+        value: 10
+    },
+    {
+        img: './img/kHearts.png',
+        value: 10
+    },
+    {
+        img: './img/kDiamond.png',
+        value: 10
+    },
+    {
+        img: './img/kClubs.png',
+        value: 10
+    },
+    {
+        img: './img/kSpades.png',
+        value: 10
+    }
 ]
 let playerCardContainer = document.querySelector('#playerCardContainer');
 let playerCard1 = document.querySelector('#playersCard1');
@@ -173,11 +221,14 @@ let dealerCard3 = document.querySelector('#dealersCard3');
 let dealerCard4 = document.querySelector('#dealersCard4');
 let dealerCard5 = document.querySelector('#dealersCard5');
 let playerWallet = document.querySelector('#yourWallet');
+let dealerWallet = document.querySelector('#dealerWallet')
 let hitButton = document.querySelector('#hitButton');
 let stayButton = document.querySelector('#stayButton');
-let betButton = document.querySelector('#betButton');
+let popUP = document.querySelector('#messagePopUp');
+let message = document.createElement('p');
+let popUPButton = document.querySelector('#tryAgain')
 let playerHandArray = [];
-let playerCash = 300;
+let playerCash = 400;
 let dealerHandSum = 0;
 
 let hideButton = document.querySelectorAll('.playerOptionButton')
@@ -199,14 +250,22 @@ function onStart(playerCash){ //3 this function runs third. Passes the latest va
     flipCardDown(playerCard3)
     flipCardDown(playerCard4)
     flipCardDown(playerCard5)
-    playersTurn()
-    // playerHandArray.push(playerInitialCard1)
-    // playerHandArray.push(playerInitialCard2)
+    for(let i = 0; i < hideButton.length; i++){
+        hideButton[i].style.display= 'inline-block';
+    }
+    playerHandArray = [] // Resets playerHandArray to an empty array for the next round.
+    let card1 = dealCards(); // 4 declares a random index of deckObject to this variable
+    flipCardUp(playerCard1, card1); // line 185 and 187 loads the first two cards when game begins.
+    console.log('card 1: ' + card1.value)
+    let card2 = dealCards(); // 
+    flipCardUp(playerCard2, card2);
+    console.log('card 2: ' + card2.value)
+    playerHandArray.push(card1)
+    playerHandArray.push(card2)
 }
 
 function dealCards(){
-    let dealtCard = deckObject[Math.floor(Math.random()*deckObject.length)];
-    console.log('dealt card: ' + dealtCard.value);   
+    let dealtCard = deckObject[Math.floor(Math.random()*deckObject.length)]; 
     return dealtCard;
 }
 
@@ -219,8 +278,13 @@ function dealCards(){
 // }
 async function hit(){
 
+    // let initialHand = 0;
+    // let newCard = 0;
+    // let initialHand = playerHandSum();
     let newHand = 0;
     let newCard =  await dealCards();
+    console.log('new card: '+ newCard.value);
+    
     playerHandArray.push(newCard);
     console.log(playerHandArray);
     for(let i = 0 ; i < playerHandArray.length; i++){
@@ -228,7 +292,8 @@ async function hit(){
        console.log('Sum: '+ newHand)
     }
     if(playerHandArray.length == 3){
-       playerCard3.style.backgroundImage = `url('${newCard.img}')`;
+       playerCard3.style.backgroundImage = `url('${newCard.img}')` 
+      
     }
    else if(playerHandArray.length == 4){
         playerCard4.style.backgroundImage = `url('${newCard.img}')`;
@@ -247,25 +312,58 @@ function stay(){
     
 }
 
+function tryAgain(){
+
+    popUP.style.display = 'none';
+    // if(cash >= 100){
+        onStart();
+       
+    // }
+    // else if(cash <= 0){
+    //     alert('Not enough money');
+    //     playerWallet.innerHTML = `Your Wallet: ${cash}`;
+    //     // returnHome();
+    // }
+
+}
 
 function check(hand, numOfCards){
     if(hand == 21){
         playerCash = playerCash + 100;
-        alert('You win! your cash: ' + playerCash);
-        resetGame(playerCash);
+        playerWallet.innerHTML = `Your Wallet: ${playerCash}`;
+        alert(playerCash);
+        message.innerHTML = 'You win! line 316';
+        message.style.textAlign='center';
+        popUP.append(message)        
+        popUP.style.display='inline-block';
     }
     else if(hand < 21 && numOfCards == 5){
         playerCash = playerCash + 100;
-        alert('less than 21 5 cards you win!');
-        resetGame(playerCash);
+        playerWallet.innerHTML = `Your Wallet: ${playerCash}`;
+        alert(playerCash);
+        message.innerHTML = 'You win! line 326';
+        message.style.textAlign='center';
+        popUP.append(message);       
+         popUP.style.display='inline-block';
     }
     else if (hand > 21){
         
         playerCash = playerCash - 100
-        alert('busted! your cash: ' + playerCash);
-        resetGame(playerCash);
+        playerWallet.innerHTML = `Your Wallet: ${playerCash}`;
+        alert(playerCash);
+        message.innerHTML = 'You Lose! line 336';
+        message.style.textAlign='center';
+        popUP.append(message)       
+        popUP.style.display='inline-block';
     }
-    return playerCash;
+    if(playerCash <= 0){
+        message.innerHTML = 'Not enough money';
+        message.style.textAlign='center';
+        popUP.append(message);       
+         popUP.style.display='inline-block';
+         returnHome()
+    }
+    
 }
 
 function flipCardUp(cardDiv, card){
@@ -275,35 +373,39 @@ function flipCardUp(cardDiv, card){
 function flipCardDown(faceDownCard){
     faceDownCard.style.backgroundImage =  `url('img/facedowncard.png')`;
 }
-function dealerCheck(playerHand,dealerHand){
+// function dealerCheck(playerHand,dealerHand){
 
-    let cash = check()
-    if(dealerHand < playerHand){
-        let newCard = dealCards();
-        return newCard;
-    }
-    else if(dealerHand > playerHand || dealerHandSum == 21){
-        alert('dealer wins > player hand or == 21')
-        cash = cash - 100;
-        playerWallet.innerHTML = `update: ${cash}`
-        // resetGame(cash)
-    }
-    else{
-        alert('Dealer Loses')
-        cash = cash + 100;
-        playerWallet.innerHTML = `update: ${cash}`
-        // resetGame(cash)
-    }
+//     //let cash = check()
+//     // if(dealerHand <= playerHand){
+//     //     let newCard = dealCards();
+//     //     return newCard;
+//     // }
+//     if(dealerHand > playerHand || dealerHandSum == 21){
+//         alert('dealer wins > player hand or == 21')
+//         //cash = cash - 100;
+//        // playerWallet.innerHTML = `update: ${cash}`
+//         console.log('This is repeating')
+        // resetGame()
+//     }
+//     // else if(dealerHand > 21){
+//     //     alert('Dealer Loses')
+//     //     cash = cash + 100;
+//     //     playerWallet.innerHTML = `update: ${cash}`
+//     //     resetGame(cash)
+//     // }
     
-}
+// }
 
 function playersTurn(){
     let playerHandSum = 0;
     let card1 = dealCards(); // 4 declares a random index of deckObject to this variable
     flipCardUp(playerCard1, card1); // line 185 and 187 loads the first two cards when game begins.
+    console.log('card 1: ' + card1.value)
     let card2 = dealCards(); // 
     flipCardUp(playerCard2, card2);
+    console.log('card 2: ' + card2.value)
     playerHandSum = card1.value + card2.value
+    return playerHandSum;
     // check(playerHandSum, 2)
     // let card3 = dealCards(); // 
     // flipCardUp(playerCard3, card3);
@@ -319,26 +421,34 @@ function playersTurn(){
     // check(playerHandSum, 5)
     
 }
-function resetGame(cash){ 
+// function resetGame(cash, dealerCash){ 
 
-    // playerCard3.style.backgroundImage =  `url('img/facedowncard.png')`;
-    // playerCard4.style.backgroundImage =  `url('img/facedowncard.png')`;
-    // playerCard5.style.backgroundImage =  `url('img/facedowncard.png')`;
-    // dealerCard1.style.backgroundImage =  `url('img/facedowncard.png')`;
-    // dealerCard2.style.backgroundImage =  `url('img/facedowncard.png')`;
-    // dealerCard3.style.backgroundImage =  `url('img/facedowncard.png')`;
-    // dealerCard4.style.backgroundImage =  `url('img/facedowncard.png')`;
-    // dealerCard5.style.backgroundImage =  `url('img/facedowncard.png')`;
+
+  
+//  }
+
+function resetGameDealer(cash){ 
+
+    playerCard3.style.backgroundImage =  `url('img/facedowncard.png')`;
+    playerCard4.style.backgroundImage =  `url('img/facedowncard.png')`;
+    playerCard5.style.backgroundImage =  `url('img/facedowncard.png')`;
+    dealerCard1.style.backgroundImage =  `url('img/facedowncard.png')`;
+    dealerCard2.style.backgroundImage =  `url('img/facedowncard.png')`;
+    dealerCard3.style.backgroundImage =  `url('img/facedowncard.png')`;
+    dealerCard4.style.backgroundImage =  `url('img/facedowncard.png')`;
+    dealerCard5.style.backgroundImage =  `url('img/facedowncard.png')`;
     for(let i = 0; i < hideButton.length; i++){
-        hideButton[i].style.display = 'inline-block';
+        hideButton[i].style.display= 'inline-block';
     }
     playerHandArray = [] // Resets playerHandArray to an empty array for the next round.
     if(cash >= 100){
         onStart(cash);
     }
-    else{
+    else if(cash <= 0){
         alert('Not enough money');
-        playerWallet.innerHTML = `Your Wallet: ${cash}`;
+        message.innerHTML = 'Not Enough Money!';
+        popUP.append(message)       
+         dealerWallet.innerHTML = `Dealer Wallet: ${cash}`;
         returnHome();
     }
 }
@@ -349,84 +459,154 @@ function returnHome(){
 
 }
 
-
+let dealerCash = 1000;
 async function dealersTurn(){
-    console.log('Dealers')
-    let playerCash = stay();
+    console.log('Dealers Turn-----------------------------------')
     for(let i = 0; i < hideButton.length; i++){
-        hideButton[i].style.display = 'none';
+        hideButton[i].style.display= 'none';
     }
     let playerHand = 0;
     for(let i = 0; i < playerHandArray.length; i++){
         playerHand += playerHandArray[i].value
     }
-    let card1 = await dealCards();
+    let card1 = await dealCards(); 
     let card2 = await dealCards();
-    console.log('dealt card1: ' + card1)
-    console.log('dealt card2: ' + card2)
     dealerHandSum =  card1.value + card2.value; 
-    console.log('dealer sum: ' + dealerHandSum)
-    await flipCardUp(dealerCard1, card1)
-    await flipCardUp(dealerCard2, card2)
-    let card3 = await dealCards();
-    console.log('dealt card3: ' + card3)
-    flipCardUp(dealerCard3, card3)
-    dealerHandSum = card3 + dealerHandSum;
-    console.log('dealer sum: ' + dealerHandSum)
-    dealerCheck(playerHand,dealerHandSum)
-    let card4 = await dealCards();
-    console.log('dealt card4: ' + card4)
-    flipCardUp(dealerCard4, card4)
-    // dealerHandSum = card4 + dealerHandSum
-    // dealerCheck(playerHand,dealerHandSum)
-    // // dealerCard1.style.backgroundImage = `url('${card1.img}')`;
-    // // dealerCard2.style.backgroundImage = `url('${card2.img}')`;
-    // 
+    await flipCardUp(dealerCard1, card1);
+    await flipCardUp(dealerCard2, card2);
+    console.log('card 1 + card 2: '+ dealerHandSum)
+    // await dealerCheck(playerHand, dealerHandSum);// end of card1 and card2 
+    // console.log('dealt card1: ' + card1.value);
+    // console.log('dealt card2: ' + card2.value);
+    // console.log('dealer sum: ' + dealerHandSum);
+    // let card3 = await dealCards();//beginning of card 3
     // dealerHandSum = card3.value + dealerHandSum;
-    // await flipCardUp(dealerCard3, card3)
-    // await dealerCheck(playerHand, dealerHandSum)
-    // // dealerCard3.style.backgroundImage = `url('${card3.img}')`;
-    // let card4 = await dealerCheck(dealerHandSum, playerHand);
-    // dealerHandSum = card4.value + dealerHandSum 
-    // await flipCardUp(dealerCard4, card4)
-    // await dealerCheck(playerHand, dealerHandSum)
-    // // dealerCard4.style.backgroundImage = `url('${card4.img}')`;
-    // let card5 = await dealerCheck(dealerHandSum, playerHand);
-    // dealerHandSum = card5.value + dealerHandSum
-    // await flipCardUp(dealerCard5, card5)
-    // await dealerCheck(playerHand, dealerHandSum)
-    // dealerCard5.style.backgroundImage = `url('${card5.img}')`;
+    // await flipCardUp(dealerCard3, card3);
+    // await dealerCheck(playerHand, dealerHandSum);
+    // //console.log('dealt card3: ' + card3.value)
+    // console.log('dealer sum: ' + dealerHandSum)
+    // let card4 = dealCards() 
+    // dealerHandSum = card4.value + dealerHandSum;
+    // console.log('dealt card4: ' + card4.value)
+    //  setTimeout(flipCardUp(dealerCard4, card4), 200)
+    // await dealerCheck(playerHand,dealerHandSum)
+    // console.log('dealer sum: ' + dealerHandSum)
+    // let card5 = await dealCards() 
+    // dealerHandSum = card5.value + dealerHandSum;
+    // console.log('dealt card4: ' + card5.value)
+    // setTimeout(flipCardUp(dealerCard5, card5), 200)
+    // await dealerCheck(playerHand,dealerHandSum)
+    // console.log('dealer sum: ' + dealerHandSum)
+    // // dealerHandSum = card4 + dealerHandSum
+    // // dealerCheck(playerHand,dealerHandSum)
+    // // // dealerCard1.style.backgroundImage = `url('${card1.img}')`;
+    // // // dealerCard2.style.backgroundImage = `url('${card2.img}')`;
+    // // 
+    // // dealerHandSum = card3.value + dealerHandSum;
+    // // await flipCardUp(dealerCard3, card3)
+    // // await dealerCheck(playerHand, dealerHandSum)
+    // // // dealerCard3.style.backgroundImage = `url('${card3.img}')`;
+    // // let card4 = await dealerCheck(dealerHandSum, playerHand);
+    // // dealerHandSum = card4.value + dealerHandSum 
+    // // await flipCardUp(dealerCard4, card4)
+    // // await dealerCheck(playerHand, dealerHandSum)
+    // // // dealerCard4.style.backgroundImage = `url('${card4.img}')`;
+    // // let card5 = await dealerCheck(dealerHandSum, playerHand);
+    // // dealerHandSum = card5.value + dealerHandSum
+    // // await flipCardUp(dealerCard5, card5)
+    // // await dealerCheck(playerHand, dealerHandSum)
+    // // dealerCard5.style.backgroundImage = `url('${card5.img}')`;
 
-    // if(dealerHandSum < playerHand ){
-    // card3 = dealCards();
-    // dealerHandSum = card3.value + dealerHandSum; 
-    // dealerCard3.style.backgroundImage = `url('${card3.img}')`
-    //     if(dealerHandSum <= playerHand){
-    //         card4 = dealCards();
-    //         dealerHandSum = card4.value + dealerHandSum; 
-    //         dealerCard4.style.backgroundImage = `url('${card4.img}')`
-    //         if(dealerHandSum <= playerHand){
-    //             card5 = dealCards();
-    //             dealerHandSum = card5.value + dealerHandSum; 
-    //             dealerCard4.style.backgroundImage = `url('${card5.img}')`
-    //             if(dealerHandSum <= 21){
-    //                 alert('dealer Wins 5 cards')
-    //             }
-    //             else if(dealerHandSum > 21){
-    //                 alert('busted')
-    //             }
-    //         }
-    //         else if(dealerHandSum > playerHand || dealerHandSum == 21){
-    //             alert('dealer wins')
-    //         }
-    //     }
-    //     else if(dealerHandSum > playerHand || dealerHandSum == 21){
-    //         alert('dealer wins')
-    //     }
-    // }
-    // else if(dealerHandSum > playerHand){
-    //     alert('dealer wins')
-    // }
+    if(dealerHandSum < playerHand ){
+    card3 = dealCards();
+    dealerHandSum = card3.value + dealerHandSum; 
+    console.log('card 1 + card 2 + card 3: '+ dealerHandSum)
+    dealerCard3.style.backgroundImage = `url('${card3.img}')`
+        if(dealerHandSum <= playerHand){
+            card4 = dealCards();
+            dealerHandSum = card4.value + dealerHandSum; 
+            console.log('card 1 + card 2 + card 3 + card 4: '+dealerHandSum)
+            dealerCard4.style.backgroundImage = `url('${card4.img}')`
+            if(dealerHandSum <= playerHand){
+                card5 = dealCards();
+                dealerHandSum = card5.value + dealerHandSum; 
+                console.log('card 1 + card 2 + card 3 + card 4 + card 5: '+dealerHandSum)
+                dealerCard5.style.backgroundImage = `url('${card5.img}')`
+                if(dealerHandSum <= 21){
+                    console.log('dealer Wins 5 cards')
+                    message.innerHTML = 'Dealer wins, you lose! line 531';
+                    message.style.textAlign='center';
+                    popUP.append(message);
+                    popUP.style.display='inline-block';
+                    dealerCash += 100;
+                    dealerWallet.innerHTML = `Dealer Wallet: ${dealerCash}`
+                    
+                }
+                else if(dealerHandSum > 21){
+                    console.log('busted after 5th Card')
+                    message.innerHTML = 'You win! Dealer busted line 542';
+                    popUP.append(message);
+                    popUP.style.display='inline-block';
+                    dealerCash =- 100;
+                    dealerWallet.innerHTML = `Dealer Wallet: ${dealerCash}`
+                    // resetGame()
+                }
+            }
+            else if(dealerHandSum > playerHand && dealerHandSum <= 21){
+                console.log('dealer wins after 4th Card')
+                message.innerHTML = 'You Lose! dealer wins line 550';
+                message.style.textAlign='center';
+                popUP.append(message);
+                popUP.style.display='inline-block';
+                dealerCash += 100;
+                dealerWallet.innerHTML = `Dealer Wallet: ${dealerCash}`
+                // resetGame()
+            }
+            else{
+                console.log('busted at 4th!')
+                message.innerHTML = 'You win! dealer Busted line 558';
+                message.style.textAlign='center';
+                popUP.append(message);
+                popUP.style.display='inline-block';
+                dealerCash -= 100;
+                dealerWallet.innerHTML = `Dealer Wallet: ${dealerCash}`
+                // resetGame()
+            }
+        }
+        else if(dealerHandSum > playerHand && dealerHandSum <= 21){
+            console.log('dealer wins after 3rd Card')
+            message.innerHTML = 'You Lose! line 567';
+            message.style.textAlign='center';
+            popUP.append(message);
+            popUP.style.display='inline-block';
+            dealerCash += 100;
+            dealerWallet.innerHTML = `Dealer Wallet: ${dealerCash}`
+            // resetGame()
+        }
+        else{
+            console.log('Busted at 3rd')
+            message.innerHTML = 'You win! dealer busted line 575';
+            message.style.textAlign='center';
+            popUP.append(message);
+            popUP.style.display='inline-block';
+            dealerCash -= 100;
+            dealerWallet.innerHTML = `Dealer Wallet: ${dealerCash}`
+            //resetGame()
+        }
+    }
+    else if(dealerHandSum > playerHand){
+        console.log('dealer wins at initial')
+        message.innerHTML = 'You lose! line 584';
+        message.style.textAlign='center';
+        popUP.append(message);
+        popUP.style.display='inline-block';
+        dealerCash += 100;
+        dealerWallet.innerHTML = `Dealer Wallet: ${dealerCash}`
+        //resetGame()
+    }
+    if(dealerCash == 0){
+        returnHome()
+    }
   
 
 }
@@ -470,3 +650,9 @@ let deckArray = [1,1,1,1,2,2,2,2,3,3,3,3,4,4,4,4,5,5,5,5,6,6,6,6,7,7,7,7,8,8,8,8
 
 //}
 // Need to test how to append divs for eavh random card
+
+//deal first card
+//deal second card
+//sum two cards
+//check if the dealer wins by having more than the player.
+//if not then the dealer g
