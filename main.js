@@ -213,6 +213,7 @@ let deckObject = [
         value: 10
      }
 ]
+
 let playerCardContainer = document.querySelector('#playerCardContainer');
 let playerCard1 = document.querySelector('#playersCard1'); // playerCard[x] and dealerCard[y] are the div containers that hold the card images
 let playerCard2 = document.querySelector('#playersCard2');
@@ -237,7 +238,7 @@ let dealerCash = 200;
 let dealerHandSum = 0;
 let hideButton = document.querySelectorAll('.playerOptionButton');
 
-//----------Attempted to give user option to choose the value of the ace----------------
+//----------Attempted to give the user the option to choose the value of the ace----------------
 // let acePopUp = document.createElement('div')
 // let oneButton = document.createElement('button')
 // oneButton.setAttribute('id', 'one')
@@ -253,7 +254,6 @@ function hideHomepage(){    //1. This function runs when user clicks start on th
     homepage.style.display = 'none';
     onStart();  // 2. This function gets invoked.
 }
-
 
 
 function onStart(){ //3 this function runs third.
@@ -298,6 +298,7 @@ function onStart(){ //3 this function runs third.
 
 function dealCards(){
     let dealtCard = deckObject[Math.floor(Math.random()*deckObject.length)]; 
+    return dealtCard;
     // if(dealtCard.name == 'ace'){
     //     acePopUp.style.width = '50%';
     //     acePopUp.style.background = 'orange';
@@ -325,7 +326,6 @@ function dealCards(){
     //     })
         
     //  }
-    return dealtCard;
 }
 
 //------------Randomized dealers option for the value of the ace
@@ -368,6 +368,7 @@ function Button(){
 
 
 function popUpPomptWin(){
+    
     Button()
     message.innerHTML = 'You win! line 316';
     message.style.textAlign='center';
@@ -467,7 +468,7 @@ async function dealersTurn(){
                setTimeout(()=>{dealerCard5.style.backgroundImage = `url('${card5.img}')`},6000)
                if(dealerHandSum <= 21){
                     console.log('dealer Wins 5 cards')
-                    setTimeout(()=>{ message.innerHTML = 'You lose! ';
+                    setTimeout(()=>{ message.innerHTML = 'You lose!  ';
                 
                     message.style.textAlign='center';
                     popUP.append(message);
@@ -504,7 +505,7 @@ async function dealersTurn(){
 
                 console.log('busted at 4th!')
                 setTimeout(()=>{message.innerHTML = 'You win!';
-            
+
                 popUP.style.background = 'green';
                 message.style.textAlign='center';
                 popUP.append(message);
@@ -530,7 +531,6 @@ async function dealersTurn(){
             console.log('Busted at 3rd')
             
             setTimeout(()=>{ message.innerHTML = 'You win!';
-            popUP.style.opacity = '.3';
             popUP.style.background = 'green';
             message.style.textAlign='center';
             popUP.append(message);
