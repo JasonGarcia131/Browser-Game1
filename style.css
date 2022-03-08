@@ -25,6 +25,21 @@ body{
 
 }
 
+#rulesLink{
+
+    text-decoration: none;
+    font-size: large;
+    font-weight: 600;
+    color: white;
+    margin: 20px;
+}
+
+#rulesLink:hover{
+
+    color: orange;
+
+}
+
 ul{
 
     list-style: none;
@@ -94,9 +109,8 @@ background-size: cover;
 }
 
 #messagePopUp{
-    background: orange;
     width: 50%;
-    height: 300px;
+    height: 250px;
     color: white;
     font-size: large;
    position: absolute;

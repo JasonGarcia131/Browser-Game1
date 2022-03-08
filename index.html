@@ -5,22 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Black JACK-O-LANTER</title>
     </style>
 </head>
 <body>
     <nav id="home-navigation">
         <ul>
-            <li><h2>BLACK JACK-O-LANTER:</h2></li>
             <li>
-               <img src="./img/START.png" id = 'startButton' onclick = 'hideHomepage()'/>
+                <h2>BLACK JACK-O-LANTER:</h2>
             </li>
+            <li>
+               <img src="./img/START.png" id = 'startButton' alt = 'image of tombstone with the word start.' role = 'clickable image to start the game.' onclick = 'hideHomepage()'/>
+            </li>
+            <li>
+                <a id = 'rulesLink' href="rulesPage.html">Rules</a>
             </li>
         </ul>
     </nav>
-    <div id="gameBackground">
+    <div id="gameBackground" role = 'halloween themed background image of pumpkins and a spider.'>
         <div class="startScreen">
-            <span id = 'dealerWallet'>Dealer Wallet: 1000 </span>
+            <span id = 'dealerWallet' role = 'displays dealers cash amount'>Dealer Wallet: 1000 </span>
             <div class="dealerCardContainer">
                 <div class='cards' id = 'dealersCard1'></div>
                 <div class='cards' id = 'dealersCard2'></div>
@@ -29,8 +33,8 @@
                 <div class='cards' id = 'dealersCard5'></div>
             </div>
             <div id="messagePopUp">
-                <button class = 'popUpButton' id = 'tryAgain' onclick = 'tryAgain()'>Try Again</button>
-                <button class = 'popUpButton' id = 'exit' onclick = 'returnHome()'>Exit</button>
+                <button class = 'popUpButton' id = 'tryAgain' class = 'playerOptionButton' aria-label=" Play again button" onclick = 'onStart()'>Play Again</button>
+                <button class = 'popUpButton' id = 'exit' aria-label=" Exit game button" class = 'playerOptionButton' onclick = 'returnHome()'>Exit</button>
             </div>
             <div class="playerCardContainer">
                 <div class = 'cards' id= 'playersCard1'></div>
@@ -42,8 +46,8 @@
             <span id = 'yourWallet'>Your Wallet: 1000 </span>
         
             <nav>
-                <button id = 'hitButton' class = 'playerOptionButton' onclick = 'hit()'>HIT</button>
-                <button id = 'stayButton' class = 'playerOptionButton' onclick = 'dealersTurn()'>STAY</button>
+                <button id = 'hitButton' class = 'playerOptionButton' aria-label = 'Hit button' onclick = 'hit()'>HIT</button>
+                <button id = 'stayButton' class = 'playerOptionButton' aria-label = 'Stay button' onclick = 'dealersTurn()'>STAY</button>
             </nav>
         </div>
 
