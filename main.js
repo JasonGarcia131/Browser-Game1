@@ -259,7 +259,7 @@ function hideHomepage(){    //1. This function runs when user clicks start on th
 function onStart(){ //3 this function runs third.
     popUP.style.display='none';
     playerWallet.innerHTML = `Your Wallet: $${playerCash}.00`;
-    dealerWallet.innerHTML = `Your Wallet: $${dealerCash}.00`;
+    dealerWallet.innerHTML = `Dealer Wallet: $${dealerCash}.00`;
     if(playerCash <= 0){
         message.innerHTML = 'Not enough money';
         message.style.textAlign='center';
@@ -467,7 +467,7 @@ async function dealersTurn(){
                setTimeout(()=>{dealerCard5.style.backgroundImage = `url('${card5.img}')`},6000)
                if(dealerHandSum <= 21){
                     console.log('dealer Wins 5 cards')
-                    setTimeout(()=>{ message.innerHTML = 'Dealer wins, you lose! line 531';
+                    setTimeout(()=>{ message.innerHTML = 'You lose! ';
                 
                     message.style.textAlign='center';
                     popUP.append(message);
@@ -478,7 +478,7 @@ async function dealersTurn(){
                 }
                 else if(dealerHandSum > 21){
                     console.log('busted after 5th Card')
-                    setTimeout(()=>{message.innerHTML = 'You win! Dealer busted line 542';
+                    setTimeout(()=>{message.innerHTML = 'You win! Dealer busted ';
                 
                     popUP.style.background = 'green';
                     popUP.append(message);
@@ -490,7 +490,7 @@ async function dealersTurn(){
             }
             else if(dealerHandSum > playerHand && dealerHandSum <= 21){
                 console.log('dealer wins after 4th Card')
-                setTimeout(()=>{ message.innerHTML = 'You Lose! dealer wins line 550';
+                setTimeout(()=>{ message.innerHTML = 'You Lose!';
             
                 message.style.textAlign='center';
                 popUP.style.background = 'red';
@@ -503,7 +503,7 @@ async function dealersTurn(){
             else{
 
                 console.log('busted at 4th!')
-                setTimeout(()=>{message.innerHTML = 'You win! dealer Busted line 558';
+                setTimeout(()=>{message.innerHTML = 'You win!';
             
                 popUP.style.background = 'green';
                 message.style.textAlign='center';
@@ -517,7 +517,7 @@ async function dealersTurn(){
         }
         else if(dealerHandSum > playerHand && dealerHandSum <= 21){
             console.log('dealer wins after 3rd Card')
-            setTimeout(()=>{ message.innerHTML = 'You Lose! line 567';
+            setTimeout(()=>{ message.innerHTML = 'You Lose!';
             message.style.textAlign='center';
             popUP.style.background = 'red';
             popUP.append(message);
@@ -529,7 +529,7 @@ async function dealersTurn(){
         else{
             console.log('Busted at 3rd')
             
-            setTimeout(()=>{ message.innerHTML = 'You win! dealer busted line 575';
+            setTimeout(()=>{ message.innerHTML = 'You win!';
             popUP.style.opacity = '.3';
             popUP.style.background = 'green';
             message.style.textAlign='center';
@@ -543,7 +543,7 @@ async function dealersTurn(){
     else if(dealerHandSum > playerHand){
         console.log('dealer wins at initial')
         
-        setTimeout(()=>{message.innerHTML = 'You lose! line 584';
+        setTimeout(()=>{message.innerHTML = 'You lose!';
         message.style.textAlign='center';
         popUP.style.background = 'red';
         popUP.append(message);
